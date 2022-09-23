@@ -1,0 +1,52 @@
+.todo {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.checkbox {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: .4rem;
+  border: 1px solid #2f80ed;
+  background-color: #2f80ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.checkbox img {
+  width: 90%;
+  filter: invert(1);
+}
+
+.text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: #333333;
+}
+
+.text:first-letter {
+  text-transform: uppercase;
+}
+
+.delete {
+  margin-left: auto;
+}
+
+.delete:active {
+  color: #eb5757;
+}
+
+@media (hover: hover) {
+  .checkbox:hover {
+    border: 1px solid black;
+  }
+
+  .delete:hover {
+    color: #eb5757;
+    cursor: default;
+  }
+}

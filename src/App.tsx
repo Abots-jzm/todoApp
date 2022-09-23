@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from "./App.module.css";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import AddTodo from "./components/AddTodo";
+import ActiveList from "./components/ActiveList";
+import AllList from "./components/AllList";
+import CompletedList from "./components/CompletedList";
+import DeleteAll from "./components/DeleteAll";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className={classes.app}>
+			<Routes>
+				<Route path="/" element={<Header />}>
+					<Route index element={<Navigate to="/all" />} />
+					<Route element={<AddTodo />}>
+						<Route path="all" element={<AllList />} />
+						<Route path="active" element={<ActiveList />} />
+					</Route>
+					<Route element={<DeleteAll />}>
+						<Route path="completed" element={<CompletedList />} />
+					</Route>
+				</Route>
+			</Routes>
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,27 @@
+.todo {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.checkbox {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: .4rem;
+  border: 1px solid #828282;
+}
+
+.text {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.text:first-letter {
+  text-transform: uppercase;
+}
+
+@media (hover: hover) {
+  .checkbox:hover {
+    border: 1px solid black;
+  }
+}

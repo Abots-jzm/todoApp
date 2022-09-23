@@ -1,0 +1,43 @@
+.container {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.input {
+  flex: 1;
+  font: inherit;
+  font-size: 1.4rem;
+  padding: 2rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #bdbdbd;
+  font-weight: 600;
+}
+
+.input::placeholder {
+  font-weight: 400;
+  color: #828282;
+}
+
+.button {
+  font-weight: 600;
+  flex-shrink: 0;
+  color: white;
+  padding: 2rem 4rem;
+  background-color: #2f80ed;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+}
+
+.button:active {
+  background-color: #4890ef;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: #4890ef;
+    cursor: pointer;
+  }
+
+}
