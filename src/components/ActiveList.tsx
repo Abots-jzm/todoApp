@@ -11,8 +11,8 @@ const ActiveList: React.FC = () => {
 	return (
 		<List>
 			{activeTodos.map((todo, index) => (
-				<ActiveTodo key={index} id={index}>
-					{todo}
+				<ActiveTodo key={todo.id} id={index}>
+					{todo.content}
 				</ActiveTodo>
 			))}
 		</List>

@@ -8,8 +8,8 @@ const CompletedList: React.FC = () => {
 	return (
 		<List>
 			{completedTodos.map((todo, index) => (
-				<CompletedTodo key={index} id={index}>
-					{todo}
+				<CompletedTodo key={todo.id} id={index}>
+					{todo.content}
 				</CompletedTodo>
 			))}
 		</List>

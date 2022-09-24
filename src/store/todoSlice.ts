@@ -1,13 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+type TodoItem = {
+	id: number;
+	content: string;
+};
+
 type InitialState = {
-	active: string[];
-	completed: string[];
+	active: TodoItem[];
+	completed: TodoItem[];
+	currentId: number;
 };
 
 const initialState: InitialState = {
 	active: [],
 	completed: [],
+	currentId: 0,
 };
 
 const todoSlice = createSlice({
@@ -15,7 +22,8 @@ const todoSlice = createSlice({
 	initialState,
 	reducers: {
 		create(state, action: PayloadAction<string>) {
-			state.active.push(action.payload);
+			state.active.push({ id: state.currentId, content: action.payload });
+			state.currentId++;
 		},
 		complete(state, action: PayloadAction<number>) {
 			state.completed.push(state.active[action.payload]);
