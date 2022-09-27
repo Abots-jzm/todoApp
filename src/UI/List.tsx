@@ -9,7 +9,7 @@ type Props = {
 
 const List: React.FC<Props> = (props) => {
 	return (
-		<motion.div layout className={classes.list}>
+		<motion.div layout="position" className={classes.list}>
 			{props.children}
 		</motion.div>
 	);
