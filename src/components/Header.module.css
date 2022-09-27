@@ -10,15 +10,27 @@
 
 .titleBar {
   display: flex;
-  justify-content: space-around;
-  padding-bottom: 1.8rem;
+  /*padding-bottom: 1.8rem;*/
   border-bottom: 1px solid #bdbdbd;
 }
 
-.section {
+.titleBar a {
   font-weight: 600;
   font-size: 1.4rem;
   text-transform: capitalize;
   text-decoration: none;
   color: #333;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.titleBar a div {
+  text-align: center;
+  width: 9rem;
+}
+
+.section div {
+  padding-bottom: 1.8rem;
+  border-bottom: 4px solid #2f80ed;
 }

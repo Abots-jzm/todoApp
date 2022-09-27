@@ -3,10 +3,25 @@ import classes from "./CompletedTodo.module.css";
 import Tick from "../assets/check-solid.svg";
 import { useAppDispatch } from "../store/hooks";
 import { todoActions } from "../store/todoSlice";
+import { motion } from "framer-motion";
 
 type Props = {
 	children: React.ReactNode;
 	id: number;
+};
+
+const todoVariant = {
+	hidden: {
+		opacity: 0,
+		x: -50,
+	},
+	visible: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.3,
+		},
+	},
 };
 
 const CompletedTodo: React.FC<Props> = (props) => {
@@ -22,7 +37,7 @@ const CompletedTodo: React.FC<Props> = (props) => {
 	}
 
 	return (
-		<div className={classes.todo} onClick={uncompleteTodo}>
+		<motion.div layout className={classes.todo} onClick={uncompleteTodo} variants={todoVariant} initial="hidden" animate="visible">
 			<div className={classes.checkbox}>
 				<img src={Tick} alt="Tick" />
 			</div>
@@ -30,7 +45,7 @@ const CompletedTodo: React.FC<Props> = (props) => {
 			<div className={classes.delete} onClick={deleteTodo}>
 				<span className="material-symbols-outlined">delete</span>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
