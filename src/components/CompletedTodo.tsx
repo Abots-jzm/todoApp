@@ -37,7 +37,7 @@ const CompletedTodo: React.FC<Props> = (props) => {
 	}
 
 	return (
-		<motion.div layout className={classes.todo} onClick={uncompleteTodo} variants={todoVariant} initial="hidden" animate="visible">
+		<motion.div layout="position" className={classes.todo} onClick={uncompleteTodo} variants={todoVariant} initial="hidden" animate="visible">
 			<div className={classes.checkbox}>
 				<img src={Tick} alt="Tick" />
 			</div>

@@ -39,7 +39,7 @@ const ActiveTodo: React.FC<Props> = (props) => {
 	const textClasses = `${classes.text} ${isStrikeThrough ? classes.strikeThrough : ""}`;
 
 	return (
-		<motion.div className={classes.todo} onClick={completeTodo} variants={todoVariant} initial="hidden" animate="visible" layout>
+		<motion.div className={classes.todo} onClick={completeTodo} variants={todoVariant} initial="hidden" animate="visible" layout="position">
 			<div className={classes.checkbox}>&nbsp;</div>
 			<div className={textClasses}>{props.children}</div>
 		</motion.div>

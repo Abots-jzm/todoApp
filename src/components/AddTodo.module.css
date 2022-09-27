@@ -18,3 +18,28 @@
   font-weight: 400;
   color: #828282;
 }
+
+.button {
+  font-weight: 600;
+  flex-shrink: 0;
+  color: white;
+  padding: 2rem 4rem;
+  background-color: #2f80ed;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+
+  transition: background-color .2s;
+}
+
+.button:active {
+  background-color: #4890ef;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background-color: #4890ef;
+    cursor: pointer;
+  }
+
+}

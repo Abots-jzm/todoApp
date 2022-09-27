@@ -17,7 +17,10 @@ const AddTodo: React.FC = () => {
 	return (
 		<>
 			<form className={classes.container} onSubmit={createTodo}>
-				<input required value={input} className={classes.input} type="text" placeholder="add todo" onChange={(e) => setInput(e.target.value)} />
+				<input required value={input} className={classes.input} type="text" placeholder="add details" onChange={(e) => setInput(e.target.value)} />
+				<button type="submit" className={classes.button} onClick={createTodo}>
+					Add
+				</button>
 			</form>
 			<Outlet />
 		</>
